@@ -4,6 +4,25 @@
 #define FILAS 3
 #define COLUMNAS 4
 
+void imprimirT(int matriz[][FILAS])
+{
+int j, i;
+
+for(j=0;j<COLUMNAS;j++)
+
+    {
+
+        for(i=0;i<FILAS;i++)
+        printf("%d ", matriz[j][i]);
+
+
+        printf("\n");
+
+    }
+
+}
+
+
 
 void imprimir(int matriz[][COLUMNAS])
 {
@@ -92,6 +111,31 @@ resultado[f][c]=k*m[f][c];
 //resultado[0][1] = k(m[0][1])
 
 }
+                                                    //1           2
+void intercambiodefilas(int m [ ] [COLUMNAS],int filaACam1, int filaACam2)
+{
+int k;
+int respaldo;
+for(k=0;k<COLUMNAS;k++)
+{
+respaldo=m[filaACam1][k];
+m[filaACam1][k]=m[filaACam2][k];
+m[filaACam2][k]=respaldo;
+
+}
+
+
+}
+
+void transpuesta(int m[][COLUMNAS], int transpuesta[][FILAS]){
+int i,j;
+for(i=0;i<FILAS;i++)
+    for(j=0;j<COLUMNAS;j++)
+        transpuesta[j][i]=m[i][j];
+
+
+}
+
 
 int sumadeenteros(int a, int b)
 {
@@ -110,6 +154,7 @@ int k;
     int matrizR[FILAS][COLUMNAS];
     int matrizR1[FILAS][COLUMNAS];
     int matrizXescalarR[FILAS][COLUMNAS];
+    int transpuestaM[COLUMNAS][FILAS];
 
 
 //printf("****%d\n",p);
@@ -131,6 +176,14 @@ printf("La suma de la matriz A y B es:\n");
 imprimir(matrizR);
 printf("La resta de la matriz A y B es:\n");
 imprimir(matrizR1);
+intercambiodefilas(matriz1, 0, 2);
+
+transpuesta(matriz1,transpuestaM);
+imprimir(matriz1);
+
+printf("_____trans\n");
+imprimirT(transpuestaM);
+printf("___\n");
 
 printf("El producto de la matriz A por el escalar %i es:\n",k);
 imprimir(matrizXescalarR);
