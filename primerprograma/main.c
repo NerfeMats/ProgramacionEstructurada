@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+
 // a. Analisis de trabajo
 //ecuaciones cuadraticas
 //Problema  1. Encontrar raices * ax`2+bx +c = 0
@@ -22,6 +23,7 @@ int main()
     float a,b;
     float c;
     float x1, x2;
+    float raizcuadrada;
     printf("\n\n");
     printf("\t\tUniversidad Autonoma Metropolitana\n");
     printf("\t\tProgramacion Estructurada\n");
@@ -44,18 +46,39 @@ int main()
 
 
     // aqui se utilizan los coeficientes en la formula general
-        float discriminante = sqrt(b*b-4*a*c);
-
-    if(discriminante)
-
-    x1=(-b+discriminante)/(2*a);
-    x2=(-b-discriminante)/(2*a);
+        float discriminante = b*b-4*a*c;
 
 
+    if(discriminante>0 /*&& discriminante<4*/ ) // si sin acento, sí con acento no es
+    {
+        raizcuadrada = sqrt(discriminante);
+        x1=(-b+raizcuadrada)/(2*a);
+        x2=(-b-raizcuadrada)/(2*a);
+        printf("Tu raices son distintas: \n");
+        printf("x1: %f\n", x1);
+        printf("x2: %f\n", x2);
+    }
+    else
+    {
 
-    printf("Tu raices son: \n");
-    printf("x1: %f\n", x1);
-    printf("x2: %f\n", x2);
+        if(discriminante==0)// si no ocurre la condicion if , se descarta si ocurre
+        {
+            x1=-b/(2*a);
+            printf("Tu raices son iguales: \n");
+            printf("x1: %f\n", x1);
+        }
+
+        else
+
+        {
+            printf("el discriminante es menor a cero\n");
+            printf("no es posible calcular las raices reales");
+            // calcular las raices complejas
+
+
+        }
+    }
+
 
 
     return 0;
