@@ -20,6 +20,15 @@
 int main()
 {
     // que me gustaria programa
+
+    float var = 6;
+
+    int residuo = var % 3;
+
+   printf("residuo: %d", residuo);
+
+
+
     float a,b;
     float c;
     float x1, x2;
@@ -47,37 +56,50 @@ int main()
 
     // aqui se utilizan los coeficientes en la formula general
         float discriminante = b*b-4*a*c;
+        float dosa = 2*a;
 
-
-    if(discriminante>0 /*&& discriminante<4*/ ) // si sin acento, sí con acento no es
-    {
-        raizcuadrada = sqrt(discriminante);
-        x1=(-b+raizcuadrada)/(2*a);
-        x2=(-b-raizcuadrada)/(2*a);
-        printf("Tu raices son distintas: \n");
-        printf("x1: %f\n", x1);
-        printf("x2: %f\n", x2);
-    }
+    if(discriminante>0  ) // si sin acento, sí con acento no es
+        {
+            raizcuadrada = sqrt(discriminante);
+            x1=(-b+raizcuadrada)/dosa;
+            x2=(-b-raizcuadrada)/dosa;
+            printf("Tu raices son distintas: \n");
+            printf("x1: %f\n", x1);
+            printf("x2: %f\n", x2);
+        }
     else
-    {
-
         if(discriminante==0)// si no ocurre la condicion if , se descarta si ocurre
         {
-            x1=-b/(2*a);
-            printf("Tu raices son iguales: \n");
+            x1=-b/dosa;
+            printf("Tu raices son iguales (dobles): \n");
             printf("x1: %f\n", x1);
         }
 
         else
 
         {
+           float parteReal;
+           float parteImg;
             printf("el discriminante es menor a cero\n");
-            printf("no es posible calcular las raices reales");
+            printf("no es posible calcular las raices reales, pero sí complejas\n");
+            discriminante = -1*discriminante;
+            raizcuadrada = sqrt(discriminante);
+
+            parteReal = -b /dosa;
+            parteImg = raizcuadrada / dosa;
+            if(parteReal!=0)
+            {
+            printf("tu raiz compleja es %f +i%.2f\n", parteReal,parteImg);
+            printf("tu raiz compleja es %f -i%.2f\n", parteReal,parteImg);
+            }
+            else
+            {
+            printf("tu raiz compleja es +i%.2f\n", parteImg);
+            printf("tu raiz compleja es -i%.2f\n", parteImg);
+            }
             // calcular las raices complejas
-
-
         }
-    }
+
 
 
 
