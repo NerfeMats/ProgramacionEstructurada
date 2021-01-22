@@ -21,13 +21,21 @@ int main()
 {
     // que me gustaria programa
 
-    float var = 6;
+  /*  float var = 6.01;
+    //printf("tam en bytes float %d\n", sizeof(double));
+    int mivarIntera = var;
+    //printf("tam en bytes int %d\n", sizeof(int));
 
-    int residuo = var % 3;
+    if(var-mivarIntera>0)
+        printf("var tiene decimales");
+    else
+        printf("es un numero entero");
 
-   printf("residuo: %d", residuo);
 
+ *
+ */
 
+    system("pause");
 
     float a,b;
     float c;
@@ -64,8 +72,21 @@ int main()
             x1=(-b+raizcuadrada)/dosa;
             x2=(-b-raizcuadrada)/dosa;
             printf("Tu raices son distintas: \n");
-            printf("x1: %f\n", x1);
+
+            int auxiliar = x1;
+            if(fabs(x1-auxiliar)>0)
+            {
+            printf("x1: %.2f\n", x1);
+            printf("x2: %.2f\n", x2);
+            }
+            else
+            {
+
+            printf("x1: %d\n", auxiliar);
             printf("x2: %f\n", x2);
+            }
+
+
         }
     else
         if(discriminante==0)// si no ocurre la condicion if , se descarta si ocurre
@@ -89,8 +110,8 @@ int main()
             parteImg = raizcuadrada / dosa;
             if(parteReal!=0)
             {
-            printf("tu raiz compleja es %f +i%.2f\n", parteReal,parteImg);
-            printf("tu raiz compleja es %f -i%.2f\n", parteReal,parteImg);
+            printf("tu raiz compleja es %.2f +i%.2f\n", parteReal,parteImg);
+            printf("tu raiz compleja es %.2f -i%.2f\n", parteReal,parteImg);
             }
             else
             {
