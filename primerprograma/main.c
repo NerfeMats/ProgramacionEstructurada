@@ -35,7 +35,7 @@ int main()
  *
  */
 
-    system("pause");
+
 
     float a,b;
     float c;
@@ -66,15 +66,24 @@ int main()
         float discriminante = b*b-4*a*c;
         float dosa = 2*a;
 
+
+
     if(discriminante>0  ) // si sin acento, sí con acento no es
         {
             raizcuadrada = sqrt(discriminante);
             x1=(-b+raizcuadrada)/dosa;
             x2=(-b-raizcuadrada)/dosa;
             printf("Tu raices son distintas: \n");
+            int auxiliar2 = x2;
+            int auxiliar = x1;         //x1 = 0.2   auxiliar = x1 = 0.2 => auxiliar = 0
+                                       // x1 = 5.43   auxiliar = x1 = 5.43 => auxiliar = 5
+                                       // * x1 = 10.0 auxiliar = x1 = 10.0 => auxiliar = 10
+                                        //   x1 = 0.2 auxiliar = x1 = 0.2 => auxiliar = 0
+                                        //    si (5.43 - 5) > 0 <=> .43 > 0 => 5.43 es flotante
+                                        //    *si (10 - 10) > 0 <=> 0 > 0 => no se cumple el if y se va else
+                                        //    si (0.2 - 0) > 0 <=> 0.2 > 0 => es flotante
 
-            int auxiliar = x1;
-            if(fabs(x1-auxiliar)>0)
+            if(fabs(x1-auxiliar)>0 && fabs(x2-auxiliar2)>0)                  //fabs(-4) = 4 ; fabs(4) = 4 fabs(-0.2) = 0.2
             {
             printf("x1: %.2f\n", x1);
             printf("x2: %.2f\n", x2);
@@ -83,7 +92,7 @@ int main()
             {
 
             printf("x1: %d\n", auxiliar);
-            printf("x2: %f\n", x2);
+            printf("x2: %.2f\n", x2);
             }
 
 
