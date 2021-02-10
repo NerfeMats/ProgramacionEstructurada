@@ -1,20 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-void imprimirTabla(int t)
-{
- /*
- while(i<=10)
-    {
-    printf("%d*%d =%d\n",tabla,i,tabla*i);
-    i=i+1;
-    }*/
-}
-
+void imprimirTabla(int); //se declara prototipo o la firma de la funcion
+void marco(void);
+void practicarTabla();
 int main()
 {
-int i, tabla=2, opc, resp, contador;
+int tabla=2, opc;
 printf("\n\n");
 
 
@@ -39,21 +31,55 @@ while(1)
                         while(tabla<=10)
                         {
                             printf("tabla del %d\n",tabla);
-                            i=1;
-                            while(i<=10)
-                            {
-                            printf("%d*%d =%d\n",tabla,i,tabla*i);
-                            i=i+1;
-                            }
 
+                            //while(i<=10)
+                            //{
+                            //printf("%d*%d =%d\n",tabla,i,tabla*i);
+                            //i=i+1;
+                            //}
+                        imprimirTabla(tabla);
                         tabla=tabla+1;
                         }
 
                     }
 
                  else if(opc==2)
+                    practicarTabla();
+                 else if(opc==3)
                  {
-                    contador = 0;
+
+
+                     printf("Que tabla deseas estudiar: \n");
+                     scanf("%d",&tabla);
+
+                imprimirTabla(tabla);  // invocar <-> ven funcion
+                marco();
+
+
+                 }
+
+                 else if(opc==4)
+                 {
+                    printf("problemas");
+                 }
+                 else
+                    printf("la opc no esta en el menu");
+
+
+
+
+}
+
+
+
+    return 0;
+}
+
+
+void practicarTabla(){
+
+int contador = 0, tabla,  i;
+int resp;
                     printf("estas en practicar alguna tabla\n");
                     printf("cual tabla deseas practicar: ");
                     scanf("%d",&tabla);
@@ -75,33 +101,28 @@ while(1)
                             printf("tus aciertos son: %d\n", contador);
                             printf("tus errores son: %d\n",10-contador);
 
-                 }
-                 else if(opc==3)
-                 {
-                     i=1;
-                     printf("estudiar");
-                     printf("Que tabla deseas estudiar: ");
-                     scanf("%d",&tabla);
-
-                     imprimirTabla(tabla);
-
-
-
-                 }
-
-                 else if(opc==4)
-                 {
-                    printf("problemas");
-                 }
-                 else
-                    printf("la opc no esta en el menu");
-
-
-
-
 }
 
 
 
-    return 0;
+void marco()
+{
+ int i=1;
+  while(i<=5)
+  {
+  printf("saludos\n");
+  i++;
+  }
+}
+
+    //paso de valor por copia
+                        //  el valor de tabla se copia en t
+void imprimirTabla(int t) //definicion<->  que hara la funcion
+{
+    int i=1;
+while(i<=10)
+    {
+    printf("%d*%d =%d\n",t,i,t*i);
+    i=i+1;
+    }
 }
