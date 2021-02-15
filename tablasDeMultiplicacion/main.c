@@ -4,75 +4,69 @@
 void imprimirTabla(int); //se declara prototipo o la firma de la funcion
 void marco(void);
 void practicarTabla();
+void mostrarTodasTablas();
+void tablaAEstudiar();
+
+
+
+
+int menu(){
+    int opc;
+                printf("Programa para practicar las tablas de multiplicar\n");
+                printf("\t1. Mostrar todas las tablas\n");
+                printf("\t2. Practicar alguna tabla\n");
+                printf("\t3. Estudiar tabla\n");
+                printf("\t4. Problemas relacionas\n");
+                printf("\t0 para terminar con la ejecución\n");
+
+                printf("cual es tu opcion? ");
+                scanf("%d",&opc);
+ return opc;
+}
+
 int main()
 {
-int tabla=2, opc;
+int opc;
 printf("\n\n");
 
 
 
 while(1)
 {
-
-                printf("Programa para practicar las tablas de multiplicar\n");
-                printf("\t1. Mostrar todas las tablas\n");
-                printf("\t2. Practicar alguna tabla\n");
-                printf("\t3. Estudiar tabla\n");
-                printf("\t4. Problemas relacionas\n");
-
-                printf("cual es tu opcion? ");
-                scanf("%d",&opc);
-
-
-
-                 if(opc==1)
-                    {
-
-                        while(tabla<=10)
-                        {
-                            printf("tabla del %d\n",tabla);
-
-                            //while(i<=10)
-                            //{
-                            //printf("%d*%d =%d\n",tabla,i,tabla*i);
-                            //i=i+1;
-                            //}
-                        imprimirTabla(tabla);
-                        tabla=tabla+1;
-                        }
-
-                    }
+                opc=menu();
+                if(opc==1)
+                    mostrarTodasTablas();
 
                  else if(opc==2)
                     practicarTabla();
+
                  else if(opc==3)
-                 {
-
-
-                     printf("Que tabla deseas estudiar: \n");
-                     scanf("%d",&tabla);
-
-                imprimirTabla(tabla);  // invocar <-> ven funcion
-                marco();
-
-
-                 }
+                 tablaAEstudiar();
 
                  else if(opc==4)
-                 {
                     printf("problemas");
-                 }
+
+                 else if(opc==0)
+                    break;
                  else
                     printf("la opc no esta en el menu");
-
-
-
-
 }
 
-
+printf("saliendo...");
 
     return 0;
+}
+
+void tablaAEstudiar(){
+int tabla;
+printf("Que tabla deseas estudiar: \n");
+    scanf("%d",&tabla);
+
+    imprimirTabla(tabla);  // invocar <-> ven funcion
+                //marco();
+
+
+
 }
 
 
@@ -103,6 +97,27 @@ int resp;
 
 }
 
+
+void mostrarTodasTablas(){
+int tabla=2;
+while(tabla<=10)
+    {
+        printf("tabla del %d\n",tabla);
+
+        //while(i<=10)
+        //{
+        //printf("%d*%d =%d\n",tabla,i,tabla*i);
+        //i=i+1;
+        //}
+    imprimirTabla(tabla);
+    tabla=tabla+1;
+    }
+
+
+
+
+
+}
 
 
 void marco()
