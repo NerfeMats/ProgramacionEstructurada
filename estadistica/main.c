@@ -9,8 +9,8 @@ printf("proximamente mejorado\n");
 
 int main()
 {
-//float x1, x2, x3, x4, x5, x6;
-    //x[0], x[1], x[2], ...,x[5]
+//float x0, x1, x2, x3, x4, x5;
+    //x[0], x[1], x[2],x[4],x[5]
 
 //int y[50];
 float x[6];
@@ -18,8 +18,9 @@ float prom;
 
 head();
 
+//int i=0;
 //while(i<6)
-for(int i=0;i<6;i=i+1)
+for(int i=0 ; i<6 ; i=i+1)
 {
 printf("da tu  calificacion: x%d\n",i);
 scanf("%f",&x[i]);
@@ -44,15 +45,18 @@ prom = (x1+x2+x3+x4+x5+x6)/6;
 float sum=0;
 
 for(int i=0; i<6; i++)
-sum = sum + x[i];
+sum = sum + i;
+
+
+
 
 prom = sum/6;
 //algo + x[i];
 //der(sum+x[i])   ->    izq (sum)
-//0    +   x[0]                  x[0]
-//x[0]+x[1]               x[0]+x[1]
-//(x[0]+x[1]) +x[2]  ->   x[0]+x[1] +x[2]
-//(x[0]+x[1] +x[2])+x[3] -> x[0]+x[1] +x[2] + x[3]
+//  sum= 0    +   x[0]                   primera vez
+//  sum=x[0]+x[1]               segunda vez
+//  sum=(x[0]+x[1]) +x[2]   tercera vez
+//  sum=(x[0]+x[1] +x[2])+x[3] cuarto vez
 
 
 //0 + x[0]
