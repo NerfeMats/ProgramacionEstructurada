@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+#define max 8 //constante simbolica
 //solo esta para tres calificaciones
 //si se quiere mejorar , se tiene que poner más variables
 void head(){
-printf("Programa para calcular el promedio de 6 calificaciones\n");
+printf("Programa para calcular el promedio de %d calificaciones\n", max);
 printf("proximamente mejorado\n");
 }
 
@@ -11,16 +12,15 @@ int main()
 {
 //float x0, x1, x2, x3, x4, x5;
     //x[0], x[1], x[2],x[4],x[5]
-
 //int y[50];
-float x[6];
+float x[max];
 float prom;
 
 head();
 
 //int i=0;
 //while(i<6)
-for(int i=0 ; i<6 ; i=i+1)
+for(int i=0 ; i<max ; i=i+1)
 {
 printf("da tu  calificacion: x%d\n",i);
 scanf("%f",&x[i]);
@@ -44,13 +44,16 @@ prom = (x1+x2+x3+x4+x5+x6)/6;
 */
 float sum=0;
 
-for(int i=0; i<6; i++)
-sum = sum + i;
+for(int i=0; i<max; i++)
+sum = sum + x[i];
 
 
 
 
-prom = sum/6;
+
+
+
+prom = sum/max;
 //algo + x[i];
 //der(sum+x[i])   ->    izq (sum)
 //  sum= 0    +   x[0]                   primera vez
